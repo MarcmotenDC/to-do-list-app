@@ -67,8 +67,7 @@ function renderTasks(filter = 'all') {
     if (filter === 'completed') {
         filteredTasks = tasks.filter(task => task.completed);
     } else if (filter === 'pending') {
-        // TODO: filter pending tasks
-
+        filteredTasks = tasks.filter(task => task.pending)
     }
 
     filteredTasks.forEach(task => {
