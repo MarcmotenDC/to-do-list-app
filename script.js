@@ -27,10 +27,8 @@ function addTask(title) {
         title: title,
         completed: false
     };
-    // TODO: push the new task title to teh tasks array
-
-    // TODO: Call the renderTasks() method to update the app
-
+    tasks.push(newTask)
+    renderTasks()
 }
 
 // Function: Edit Task
