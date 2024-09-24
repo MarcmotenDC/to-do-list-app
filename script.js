@@ -53,7 +53,6 @@ function toggleTaskCompletion(id) {
     if (task) {
         task.completed = !task.completed;
         renderTasks()
-
     }
 }
 
@@ -106,8 +105,7 @@ function renderTasks(filter = 'all') {
         // Add Edit button to the task item
         taskItem.appendChild(editButton);
         taskItem.appendChild(removeButton)
-        // TODO: Add event listener to task item for completion
-        
+        taskItem.addEventListener('click', () => toggleTaskCompletion(task.id))
         // Update taskList item in UI
         taskList.appendChild(taskItem);
     });
