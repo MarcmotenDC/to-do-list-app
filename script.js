@@ -76,7 +76,11 @@ function renderTasks(filter = 'all') {
         taskItem.className = `list-group-item`;
         // Add task title as text to list item.
         taskItem.textContent = task.title;
-
+        //! Add task pending status
+        task.pending = true
+        if (task.completed) {
+            task.pending = false
+        }
         // Create Edit Button
         const editButton = document.createElement('button');
         // Add button text
@@ -105,7 +109,15 @@ function renderTasks(filter = 'all') {
         // Add Edit button to the task item
         taskItem.appendChild(editButton);
         taskItem.appendChild(removeButton)
-        taskItem.addEventListener('click', () => toggleTaskCompletion(task.id))
+        taskItem.addEventListener('click', () => {
+            toggleTaskCompletion(task.id)
+
+        })
+        if (task.completed) {
+            taskItem.classList.add('text-decoration-line-through');
+        } else {
+            taskItem.classList.remove('text-decoration-line-through');
+        }
         // Update taskList item in UI
         taskList.appendChild(taskItem);
     });
