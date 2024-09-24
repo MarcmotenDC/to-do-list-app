@@ -12,13 +12,11 @@ document.getElementById('addTaskForm').addEventListener('submit', function (even
     event.preventDefault(); // Prevent form submission
 
     // Add code to add a new task
-    // TODO: retrieve the task title from the form input field
+    const taskTitle = this.taskTitle.value
 
     if (taskTitle.trim() !== '') {
-        // TODO: Add new task. HINT: Pass the task title from the form to the addTask() method.
-
-        // TODO: Clear the task title form input field
-
+        addTask(taskTitle)
+        this.taskTitle.value = ''
     }
 });
 
