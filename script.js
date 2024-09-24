@@ -36,15 +36,14 @@ function editTask(id, newTitle) {
     const task = tasks.find(task => task.id === id);
     if (task) {
         task.title = newTitle;
-    // TODO: Call the renderTasks() method to update the app
-
+        renderTasks()
     }
 }
 
 // Function: Remove Task
 function removeTask(id) {
     tasks = tasks.filter(task => task.id !== id);
-    // TODO: Call the renderTasks() method to update the app
+    renderTasks()
 
 }
 
@@ -53,7 +52,7 @@ function toggleTaskCompletion(id) {
     const task = tasks.find(task => task.id === id);
     if (task) {
         task.completed = !task.completed;
-        // TODO: Call the renderTasks() method to update the app
+        renderTasks()
 
     }
 }
